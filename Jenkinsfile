@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone Git Repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/gyanpunj/jenkins-ansible.git'
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/gyanpunj/jenkins-ansible.git']])
             }
         }
 
